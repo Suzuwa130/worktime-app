@@ -1,3 +1,14 @@
+// 合計時間・出勤日数の多言語ラベル
+const labelTexts = {
+  ja: { total: "合計時間", days: "出勤日数" },
+  en: { total: "Total time", days: "Working days" },
+  tl: { total: "Kabuuang oras", days: "Bilang ng pasok" },
+  vi: { total: "Tổng thời gian", days: "Số ngày làm" },
+  th: { total: "เวลารวม", days: "จำนวนวันทำงาน" },
+  lo: { total: "ເວລາລວມ", days: "ຈໍານວນວັນເຮັດວຽກ" },
+  id: { total: "Total waktu", days: "Jumlah hari kerja" }
+};
+
 const descriptions = {
   ja: "勤務時間は数字だけ入力してください。<br>例：230 と入力すると 2 時間 30 分（2:30）と表示されます。",
   en: "Please enter numbers only.<br>For example, entering “230” will display as 2 hours 30 minutes (2:30).",
@@ -20,6 +31,8 @@ const footerMessages = {
 
 document.getElementById("description").innerHTML = descriptions.ja;
 document.getElementById("footerMessage").innerHTML = footerMessages.ja;
+document.getElementById("labelTotal").textContent = labelTexts.ja.total;
+document.getElementById("labelDays").textContent = labelTexts.ja.days;
 
 const inputsDiv = document.getElementById("inputs");
 
@@ -74,5 +87,7 @@ document.querySelectorAll(".lang-scroll button").forEach(btn => {
     let lang = btn.dataset.lang;
     document.getElementById("description").innerHTML = descriptions[lang];
     document.getElementById("footerMessage").innerHTML = footerMessages[lang];
+    document.getElementById("labelTotal").textContent = labelTexts[lang].total;
+    document.getElementById("labelDays").textContent = labelTexts[lang].days;
   });
 });
