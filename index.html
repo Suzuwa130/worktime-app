@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>勤務時間入力</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="lang-scroll">
+  <button data-lang="ja" class="active">日本語</button>
+  <button data-lang="en">English</button>
+  <button data-lang="tl">Tagalog</button>
+  <button data-lang="vi">Vietnam</button>
+  <button data-lang="th">Thai</button>
+  <button data-lang="lo">Lao</button>
+  <button data-lang="id">Indonesia</button>
+</div>
+
+<div id="description" class="description"></div>
+
+<div id="inputs"></div>
+
+<div class="summary">
+  <div>合計時間 ➡ <span id="total">00:00</span></div>
+  <div>出勤日数 ➡ <span id="days">0</span></div>
+</div>
+
+<div id="footerMessage" class="footer"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
