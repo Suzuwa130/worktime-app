@@ -60,3 +60,8 @@ body {
   font-size: 16px;
   text-align: center;
 }
+
+.arrow {
+  color: #007bff; /* 青色 */
+  font-weight: bold;
+}
