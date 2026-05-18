@@ -1,67 +1,68 @@
 body {
-  font-family: "Meiryo", sans-serif;
-  padding: 15px;
-  background: #ffffff;
+    font-family: sans-serif;
+    padding: 20px;
 }
 
-.lang-scroll {
-  display: flex;
-  overflow-x: auto;
-  gap: 8px;
-  margin-bottom: 15px;
+.language-buttons button {
+    margin-right: 5px;
+    padding: 6px 10px;
 }
 
-.lang-scroll button {
-  padding: 8px 14px;
-  border-radius: 20px;
-  border: none;
-  background: #dcdcdc;
-  font-size: 14px;
-  white-space: nowrap;
+#days-container {
+    margin-top: 20px;
 }
 
-.lang-scroll button.active {
-  background: #8c8c8c;
-  color: white;
+.day-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
-.description {
-  margin-bottom: 20px;
-  font-size: 15px;
-  line-height: 1.5;
+/* □で囲んだ数字（大きく・中央揃え） */
+
+.day-number-box {
+    width: 42px;
+    height: 42px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    background: #fff;
+    color: #000;   /* ← 数字は黒で固定 */
 }
 
-.row {
-  display: flex;
-  align-items: center;
-  margin-bottom: 12px;
-}
+/* 背景色（濃いめ） */
+.bg-ppink { background-color: #ff8fc4; }     /* 1～10 ピンク（濃い） */
+.bg-pcream { background-color: #f5d77b; }    /* 11～20 クリーム（濃い） */
+.bg-pblue { background-color: #6ec6ff; }     /* 21～24 水色（濃い） */
+.bg-pred { background-color: #ff6b6b; }      /* 25～26 赤（濃い） */
+.bg-pgray { background-color: #b5b5b5; }     /* 27～31 灰色（濃い） */
 
-.row label {
-  width: 30px;
-}
+/* 色分け */
+.range-pink { color: #ff7eb8; }     /* 1～10 ピンク */
+.range-cream { color: #d9b777; }    /* 11～20 クリーム */
+.range-blue { color: #6ecbff; }     /* 21～24 水色 */
+.range-red { color: #ff4d4d; }      /* 25～26 赤 */
+.range-gray { color: #9e9e9e; }     /* 27～31 灰色 */
 
-.row input {
-  flex: 1;
-  padding: 14px;
-  font-size: 20px;
-  border-radius: 12px;
-  border: 2px solid #7fbf7f;
-  background: #eaffea;
+/* 時間入力欄：丸みのある四角 + 太い緑線 */
+input[type="text"] {
+    width: 90px;
+    padding: 8px;
+    font-size: 20px;
+    border: 3px solid #00a651;   /* 太い緑線 */
+    border-radius: 10px;         /* 角丸 */
+    outline: none;
+    text-align: center;
+    background-color: #ffffff;
 }
 
 .summary {
-  margin-top: 25px;
-  font-size: 18px;
+    margin-top: 20px;
+    font-size: 20px;
 }
 
-.footer {
-  margin-top: 30px;
-  font-size: 16px;
-  text-align: center;
-}
-
-.arrow {
-  color: #007bff; /* 青色 */
-  font-weight: bold;
-}

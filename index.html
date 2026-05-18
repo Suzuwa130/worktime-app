@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>勤務時間入力</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>勤務時間入力アプリ</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="lang-scroll">
-  <button data-lang="ja" class="active">日本語</button>
-  <button data-lang="en">English</button>
-  <button data-lang="tl">Tagalog</button>
-  <button data-lang="vi">Vietnam</button>
-  <button data-lang="th">Thai</button>
-  <button data-lang="lo">Lao</button>
-  <button data-lang="id">Indonesia</button>
-</div>
+    <div class="language-buttons">
+        <button data-lang="ja">日本語</button>
+        <button data-lang="en">English</button>
+        <button data-lang="tl">Tagalog</button>
+        <button data-lang="vi">Tiếng Việt</button>
+        <button data-lang="th">ไทย</button>
+        <button data-lang="lo">ລາວ</button>
+        <button data-lang="id">Indonesia</button>
+        <button data-lang="zh">中文</button>
+    </div>
 
-<div id="description" class="description"></div>
+    <h2 id="description">勤務時間を入力してください。</h2>
 
-<div id="inputs"></div>
+    <div id="days-container"></div>
 
-<div class="summary">
-  <div><span id="labelTotal">合計時間</span> <span class="arrow">➡</span> <span id="total">00:00</span></div>
-  <div><span id="labelDays">出勤日数</span> <span class="arrow">➡</span> <span id="days">0</span></div>
-</div>
+    <div class="summary">
+        <p><strong id="total-label">合計時間：</strong><span id="total-time">0:00</span></p>
+        <p><strong id="days-label">出勤日数：</strong><span id="work-days">0</span></p>
+    </div>
 
-<div id="footerMessage" class="footer"></div>
+    <footer id="footer-text">入力内容に間違いがないか確認してください。</footer>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
+
