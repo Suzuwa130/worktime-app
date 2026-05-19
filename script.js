@@ -9,12 +9,31 @@ document.addEventListener("DOMContentLoaded", () => {
         numberBox.classList.add("day-number-box", getBgClass(i));
         numberBox.textContent = i;
 
-        const input = document.createElement("input");
-        input.type = "text";
-        input.placeholder = "0:00";
-        input.addEventListener("input", updateTotals);
+const input = document.createElement("input");
+input.type = "text";
+input.placeholder = "0:00";
 
-        row.appendChild(numberBox);
+input.addEventListener("input", function () {
+    convertTime(this);
+    updateTotals();
+});
+   
+
+function convertTime(input) {
+    let value = input.value.replace(/[^0-9]/g, ""); // 数字以外を除去
+
+    if (value.length >= 3) {
+        let hours = parseInt(value.slice(0, -2), 10);
+        let minutes = parseInt(value.slice(-2), 10);
+
+        hours += Math.floor(minutes / 60);
+        minutes = minutes % 60;
+
+        input.value = `${hours}:${minutes.toString().padStart(2, "0")}`;
+    }
+}
+
+     row.appendChild(numberBox);
         row.appendChild(input);
         daysContainer.appendChild(row);
     }
