@@ -9,35 +9,47 @@ document.addEventListener("DOMContentLoaded", () => {
         numberBox.classList.add("day-number-box", getBgClass(i));
         numberBox.textContent = i;
 
-const input = document.createElement("input");
-input.type = "text";
-input.placeholder = "0:00";
+        const input = document.createElement("input");
+        input.type = "text";
+        input.placeholder = "0:00";
 
-input.addEventListener("input", function () {
-    convertTime(this);
-    updateTotals();
-});
-   
+        // 入力イベント
+        input.addEventListener("input", function () {
+            convertTime(this);
+            updateTotals();
+        });
 
-function convertTime(input) {
-    let value = input.value.replace(/[^0-9]/g, ""); // 数字以外を除去
-
-    if (value.length >= 3) {
-        let hours = parseInt(value.slice(0, -2), 10);
-        let minutes = parseInt(value.slice(-2), 10);
-
-        hours += Math.floor(minutes / 60);
-        minutes = minutes % 60;
-
-        input.value = `${hours}:${minutes.toString().padStart(2, "0")}`;
-    }
-}
-
-     row.appendChild(numberBox);
+        row.appendChild(numberBox);
         row.appendChild(input);
         daysContainer.appendChild(row);
     }
 });
+
+/* 時間変換 */
+function convertTime(input) {
+    let value = input.value;
+
+    // すでに「◯:◯◯」形式なら何もしない
+    if (/^\d+:\d{2}$/.test(value)) return;
+
+    // 数字以外を除去
+    value = value.replace(/[^0-9]/g, "");
+
+    // 3桁未満なら変換しない
+    if (value.length < 3) {
+        input.value = value;
+        return;
+    }
+
+    // 3桁以上 → 時間と分に変換
+    let hours = parseInt(value.slice(0, -2), 10);
+    let minutes = parseInt(value.slice(-2), 10);
+
+    hours += Math.floor(minutes / 60);
+    minutes = minutes % 60;
+
+    input.value = `${hours}:${minutes.toString().padStart(2, "0")}`;
+}
 
 /* 色分けルール */
 function getBgClass(day) {
